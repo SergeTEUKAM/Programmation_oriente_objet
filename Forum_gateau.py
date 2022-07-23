@@ -1,5 +1,7 @@
 """Définit les classes propres à notre forum. """
 
+# Modification de la class modérateur
+
 class File:
     """Fichier."""
 
@@ -51,9 +53,15 @@ class User:
         """représentation de l'utilisateur."""
         return self.username
 
+# Moderator hérite de la class User
 
 class Moderator(User):
     """Utilisateur modérateur."""
+
+    # Moderator hérite de toutes les fonctions de User
+    def __init__(self, username, password):
+        super().__init__(username, password)
+
 
     def edit(self, post, content):
         """Modifie un message."""
